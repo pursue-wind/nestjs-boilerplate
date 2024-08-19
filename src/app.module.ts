@@ -3,7 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GraphqlModule } from './support/mesh.module';
 import { AcceptLanguageResolver, I18nModule } from 'nestjs-i18n';
 import * as path from 'node:path';
 import { AppConfigModule } from './config/config.module';
@@ -31,7 +30,6 @@ const cfgModule = ConfigModule.forRoot({
     AppConfigModule,
     i18nModule,
     AuthModule,
-    GraphqlModule,
     ConfigModule.forRoot({ isGlobal: true }),
     GlobalModule,
     TypeOrmModule.forRootAsync({
