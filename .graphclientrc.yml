@@ -1,0 +1,13 @@
+sources:
+  - name: fusion
+    handler:
+      graphql:
+        endpoint: Your Graph EndPoint
+    transforms:
+      - autoPagination:
+          validateSchema: true # Validates that the schema source actually contains the required input filters.
+          limitOfRecords: 1000
+      #https://github.com/graphprotocol/graph-client/blob/main/packages/block-tracking/README.md
+      # The following section will make sure to automatically fetch the block information, and then use it for tracking in future queries.
+      #- blockTracking:
+      #   validateSchema: true # Validates that the schema source actually contains _meta and input block filters.
